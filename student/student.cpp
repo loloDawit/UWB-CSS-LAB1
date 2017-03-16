@@ -151,6 +151,17 @@ int Student::findMax(Student::StudentType *student, int size){
     return maxGrade;
 }
 
+int Student::findMin(Student::StudentType *student, int size){
+    int minGrade = student[0].grade;
+    
+    for(int i = 1; i < size; i++){
+        int value = student[i].grade;
+        if(value < minGrade)
+            minGrade = value;
+    }
+    return minGrade; 
+}
+
 
 
 

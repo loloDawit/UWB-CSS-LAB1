@@ -16,14 +16,16 @@ int main(int argc, const char * argv[]) {
     int size;
     int average;
     int sDiv;
-    int maxGrade;
+    int maxGrade, minGrade;
     int histogram[HISTOGRAMSIZE];
+    
+    
     ifstream infile ("data1.txt");
     if(!infile){
         cout << "File could not be opened." << endl;
         return 1;
     }
-    
+    ofstream save ("savefile.txt");
     bool successfulRead = student_data.sortInput(infile, students, size);
     
     if(successfulRead){
@@ -31,10 +33,14 @@ int main(int argc, const char * argv[]) {
         average = student_data.findAverage(students, size);
         sDiv = student_data.findStandardDiv(students, size);
         maxGrade = student_data.findMax(students, size);
+        minGrade = student_data.findMin(students, size);
         student_data.setHistogram(histogram, students, size);
         student_data.displayHistogram(histogram); 
         cout << "Average grade: " << average << endl;
         cout << "StandardDeviation σ: " << sDiv << endl;
-        cout << "Maximum score: "<< maxGrade << endl; 
+        cout << "Maximum score: "<< maxGrade << endl;
+        cout << "Minimum score: "<< minGrade << endl;
     }
+
+    return 0;
 }
