@@ -29,6 +29,7 @@ class Student{
         char first[MAXLENGTH];
     };
 public:
+    Student();
     bool sortInput(istream&, StudentType*, int&);
     void dispayList(StudentType*, int);
     void setHistogram(int*, StudentType*, int);

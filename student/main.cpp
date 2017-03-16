@@ -7,10 +7,17 @@
 //
 
 #include <iostream>
+#include "student.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-    // connected
+ 
+    
+    ifstream infile ("data1.txt");
+    if(!infile){
+        cout << "File could not be opened." << endl;
+        return 1;
+    }
+    else
+    
+    
 }
