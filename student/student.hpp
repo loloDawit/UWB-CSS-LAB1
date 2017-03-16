@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <iomanip>
-
+#include <cmath>
 using namespace std;
 
 int const MAXLENGTH = 31;                   // maximum string lenght
@@ -36,6 +36,9 @@ public:
     void setHistogram(int*, StudentType*, int);
     void displayHistogram(int*);
     int findAverage(StudentType*, int);
+    int findStandardDiv(StudentType*, int);
+    int findMax(StudentType*, int);
+    int findMin(StudentType*, int); 
 
 };
 #endif /* student_hpp */

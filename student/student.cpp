@@ -122,9 +122,34 @@ void Student::displayHistogram(int *histogram){
 }
 
 
+int Student::findStandardDiv(Student::StudentType *students, int size){
+    
+    int standardDiv = 0;
+    int mean = 0;
+    int sum = 0;
+    
+    for(int student_grade = 0; student_grade < size ; student_grade++){
+        int value = students[student_grade].grade;
+        sum += value;
 
+    }
+    mean = sum/size;
+    for (int i =0; i < size ; i++)
+        standardDiv += pow((students[i].grade - mean), 2);
+    return sqrt(standardDiv/size);
+}
 
-
+int Student::findMax(Student::StudentType *student, int size){
+    
+    int maxGrade = student[0].grade;
+    
+    for(int i= 1; i < size; i ++){
+        int grade = student[i].grade;
+        if (grade > maxGrade)
+            maxGrade = grade;
+    }
+    return maxGrade;
+}
 
 
 

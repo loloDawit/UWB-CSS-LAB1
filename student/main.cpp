@@ -15,6 +15,8 @@ int main(int argc, const char * argv[]) {
     Student::StudentType students [MAXSIZE];
     int size;
     int average;
+    int sDiv;
+    int maxGrade;
     int histogram[HISTOGRAMSIZE];
     ifstream infile ("data1.txt");
     if(!infile){
@@ -27,8 +29,12 @@ int main(int argc, const char * argv[]) {
     if(successfulRead){
         student_data.displayList(students, size);
         average = student_data.findAverage(students, size);
+        sDiv = student_data.findStandardDiv(students, size);
+        maxGrade = student_data.findMax(students, size);
         student_data.setHistogram(histogram, students, size);
         student_data.displayHistogram(histogram); 
-        cout << "Average grade: " << average << endl; 
+        cout << "Average grade: " << average << endl;
+        cout << "StandardDeviation σ: " << sDiv << endl;
+        cout << "Maximum score: "<< maxGrade << endl; 
     }
 }
