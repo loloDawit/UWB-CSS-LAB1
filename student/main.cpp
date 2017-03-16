@@ -11,18 +11,24 @@
 
 int main(int argc, const char * argv[]) {
  
-    Student x;
+    Student student_data;
     Student::StudentType students [MAXSIZE];
     int size;
+    int average;
+    int histogram[HISTOGRAMSIZE];
     ifstream infile ("data1.txt");
     if(!infile){
         cout << "File could not be opened." << endl;
         return 1;
     }
     
-    bool successfulRead = x.sortInput(infile, students, size);
+    bool successfulRead = student_data.sortInput(infile, students, size);
     
     if(successfulRead){
-        x.dispayList(students, size); 
+        student_data.displayList(students, size);
+        average = student_data.findAverage(students, size);
+        student_data.setHistogram(histogram, students, size);
+        student_data.displayHistogram(histogram); 
+        cout << "Average grade: " << average << endl; 
     }
 }
