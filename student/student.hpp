@@ -20,7 +20,7 @@ int const MAXSIZE = 100;                    // maximum number of records in file
 int const MAXGRADE = 100;                   // highest possible grade
 int const LOWGRADE = 0;                     // lowest possible grade
 int const GROUP = 10;
-int const HISTOGRAMSIZE = (MAXGRADE - LOWGRADE) / (GROUP +1);
+int const HISTOGRAMSIZE = (MAXGRADE - LOWGRADE) / GROUP +1;
 
 class Student{
 public:

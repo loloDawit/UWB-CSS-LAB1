@@ -75,3 +75,68 @@ void Student::displayList(Student::StudentType *students, int size){
   
     cout << endl; 
 }
+int Student::findAverage(Student::StudentType *student, int size){
+    
+    int average = 0;
+    int totoal;
+    
+    for (int student_grade = 0; student_grade < size; student_grade++) {
+        int sum = student[student_grade].grade;
+        totoal +=sum;
+        average = totoal/size;
+    }
+    return average;
+}
+
+void Student::setHistogram(int * histogram, Student::StudentType *students,int size){
+    
+   
+    for (int i = 0; i < histogram[HISTOGRAMSIZE]; i++){
+        histogram[i] = 0;
+    }
+    int value;
+    
+    for (int i = 0; i < size; i++) {
+        value  = students[i].grade/GROUP;
+        histogram[value]++;
+    }
+}
+
+void Student::displayHistogram(int *histogram){
+    
+     cout << "Histogram of grades:"<< endl;
+    
+    for (int i = 0; i < HISTOGRAMSIZE; i++) {
+        cout << setw(3) << i * GROUP << "-->";
+        if(i*GROUP != MAXGRADE)
+            cout << setw(4) << ((i + 1) *GROUP) - 1 << ":";
+        else
+            cout << setw(4) << MAXGRADE << ":" ;
+        for(int print_star = 0; print_star < histogram[i] ; print_star++){
+            // shows same grade range repetition 
+            cout << "*";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
