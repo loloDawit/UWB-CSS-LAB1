@@ -11,6 +11,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -22,16 +23,16 @@ int const GROUP = 10;
 int const HISTOGRAMSIZE = (MAXGRADE - LOWGRADE) / (GROUP +1);
 
 class Student{
-   private:
+public:
+    
     struct StudentType{
         int grade;
         char last[MAXLENGTH];
         char first[MAXLENGTH];
     };
-public:
-    Student();
+    
     bool sortInput(istream&, StudentType*, int&);
-    void dispayList(StudentType*, int);
+    void displayList(StudentType*, int);
     void setHistogram(int*, StudentType*, int);
     void displayHistogram(int*);
     int findAverage(StudentType*, int);

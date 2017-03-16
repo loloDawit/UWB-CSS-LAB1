@@ -60,3 +60,18 @@ bool Student::sortInput(istream & infile, Student::StudentType * students, int &
         return true;
 
 }
+void Student::displayList(Student::StudentType *students, int size){
+    
+    cout << "Student record on file: " <<size <<endl;
+    cout << "-------------------------" << endl;
+    cout << "List of students name: "<< endl;
+
+    // read the students record
+    for (int record = 0; record < size; record++) {
+       cout << record +1 << " "<< setw(3) << students[record].grade
+        << " " << students[record].last
+        << " " << students[record].first << endl;
+    }
+  
+    cout << endl; 
+}

@@ -11,13 +11,18 @@
 
 int main(int argc, const char * argv[]) {
  
-    
+    Student x;
+    Student::StudentType students [MAXSIZE];
+    int size;
     ifstream infile ("data1.txt");
     if(!infile){
         cout << "File could not be opened." << endl;
         return 1;
     }
-    else
     
+    bool successfulRead = x.sortInput(infile, students, size);
     
+    if(successfulRead){
+        x.dispayList(students, size); 
+    }
 }
