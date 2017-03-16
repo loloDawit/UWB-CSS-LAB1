@@ -1,5 +1,5 @@
 # uw.lab1
-The program uses insertion algorithm technique to sort the studet data, first by their last name and then by thier first name 
+The program uses insertion algorithm technique to sort the student data file, first by their last name, then by thier first name 
 and displays the sorted list. 
 The program reads student data from file and sort, calculate the total grade and use histogram to display the result. 
 for example : 
